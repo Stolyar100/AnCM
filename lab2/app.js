@@ -1,18 +1,17 @@
 //first task
 matrixSize = 5
 
-matrix = new Array(matrixSize)
+matrix = Array.from(Array(matrixSize), () => new Array(matrixSize))
 
 for (i = 0; i < matrixSize; i++) {
-    matrix[i] = new Array(matrixSize)
     for (j = 0; j < matrixSize; j++) {
         matrix[i][j] = 0
     }
     matrix[i][i] = 1
 }
 
-// console.log('first tasks matrix')
-// console.log(matrix)
+console.log('first tasks matrix')
+console.log(matrix)
 
 // second task 
 A = [
@@ -41,7 +40,7 @@ for (i = 0; i < D.length; i++) {
         M[i][j] = D[i][j] - A[i][j]
     }
 }
-// console.log('M = D - A \n', M)
+console.log('M = D - A \n', M)
 
 //  B=A×C
 
