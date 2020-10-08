@@ -5,12 +5,10 @@ function taylorSeriesSin(x, accuracy) {
   i = 1
   sinXSample = math.sin(x)
   do {
-    // console.log("taylorSeriesSin -> difference", difference)
     result += (((- 1) ** (i - 1)) * (x ** (2 * i - 1))) / math.factorial( 2 * i - 1)
     difference = math.abs(sinXSample - result)
     i += 1
   } while (difference >= accuracy)
-  console.log("taylorSeriesSin -> i", i)
   return result
 }
 
