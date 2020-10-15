@@ -1,3 +1,10 @@
+const readline = require('readline')
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
 //first task
 matrixSize = 5
 
@@ -7,7 +14,14 @@ for (i = 0; i < matrixSize; i++) {
     for (j = 0; j < matrixSize; j++) {
         matrix[i][j] = 0
     }
+}
+
+for (i = 0; i < matrixSize; i++) {
     matrix[i][i] = 1
+}
+
+for (i = 0; i < matrixSize; i++) {
+    matrix[i][matrixSize - i - 1] = 1
 }
 
 console.log('first tasks matrix')
@@ -30,6 +44,26 @@ D = [
     [5, 4],
     [7, 3]
 ]
+
+// input from keyboard
+
+rl.question('enter A, to spit elements use " " and ", " to split rows: ', (answer) => {
+    let array = answer.split(', ').map(row => row.split(' ').map(Number))
+    A = array
+    rl.close();
+})
+
+rl.question('enter C, to spit elements use " " and ", " to split rows: ', (answer) => {
+    let array = answer.split(', ').map(row => row.split(' ').map(Number))
+    C = array
+    rl.close();
+})
+
+rl.question('enter D, to spit elements use " " and ", " to split rows: ', (answer) => {
+    let array = answer.split(', ').map(row => row.split(' ').map(Number))
+    D = array
+    rl.close();
+})
 
 // M = D - A
 

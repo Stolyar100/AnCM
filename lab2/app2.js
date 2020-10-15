@@ -1,7 +1,12 @@
-xList = [0.91, 1.43, 1.44, 1.69, 1.95, 1.95, 2.21, 2.21, 2.47, 2.73, 2.73, 2.99, 3.25, 3.25, 3.25, 3.25, 2.51, 3.77, 4.03, 4.19, 4.81, 5.07, 5.85]
+const readline = require('readline');
 
-xMean = xList.reduce((accumulator, currentValue) => accumulator + currentValue, 0) / xList.length
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-disp = xList.reduce((accumulator, currentValue, currentIndex) => {
-
-}, 0)
+rl.question('enter A, to spit elements use " " and ", " to split rows: ', (answer) => {
+  let A = answer.split(', ').map(row => row.split(' ').map(Number))
+  console.log(A)
+  rl.close();
+});
